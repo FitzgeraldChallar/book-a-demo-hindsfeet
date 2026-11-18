@@ -11,7 +11,7 @@ import {
   ChartNoAxesCombined, BadgeCheck, Globe2, MessageSquareText
 } from "lucide-react";
 
-const DEMO_URL = process.env.NEXT_PUBLIC_DEMO_FORM_URL || "";
+const DEMO_URL = process.env.NEXT_DEMO_FORM_URL || "";
 const CONTACT_PHONE = process.env.NEXT_PUBLIC_CONTACT_PHONE || "";
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
 
