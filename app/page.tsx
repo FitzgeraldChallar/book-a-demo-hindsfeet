@@ -63,7 +63,7 @@ function Logo({light=false}:{light?:boolean}) {
   </a>;
 }
 function DemoButton({className=""}:{className?:string}) {
-  return <a href={DEMO_URL || "https://forms.google.com/"} target="_blank" rel="noreferrer" className={`btn-primary ${className}`}>
+  return <a href={DEMO_URL || "https://docs.google.com/forms/d/e/1FAIpQLSdv3Z6-BhtKZs9-S_4tUoZ1Vd3MpHMXSS66VBRvUYC6rhMFKA/viewform?usp=header"} target="_blank" rel="noreferrer" className={`btn-primary ${className}`}>
     Book a demo <ArrowUpRight size={16}/>
   </a>;
 }
