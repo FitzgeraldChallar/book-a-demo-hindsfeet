@@ -39,8 +39,8 @@ const modules = [
 ];
 
 const plans = [
-  { name:"Essential", price:200, intro:"The financial foundation for growing teams.", featured:false, features:["Core accounting and chart of accounts","Sales, invoicing and customer records","Purchases, suppliers and expenses","Banking and transaction records","Standard financial reports","Email support"] },
-  { name:"Plus", price:350, intro:"More control, visibility and operational depth.", featured:true, features:["Everything in Essential","Accounts receivable and payable tools","Inventory management","Payroll and employee management","USD and LRD transaction visibility","Expanded management reports","Priority support"] },
+  { name:"Essential", price:200, intro:"The financial foundation for growing teams.", featured:false, features:["Core accounting and chart of accounts","Sales, invoicing and customer records","Purchases, suppliers and expenses","Banking and transaction records","USD and LRD transaction visibility","Standard financial reports","Email support"] },
+  { name:"Plus", price:350, intro:"More control, visibility and operational depth.", featured:true, features:["Everything in Essential","Accounts receivable and payable tools","Inventory management","Payroll and employee management","Expanded management reports","Priority support"] },
   { name:"Complete", price:500, intro:"A connected financial command centre.", featured:false, features:["Everything in Plus","AI-powered analytics and insights","Advanced reporting and business intelligence","LRA-based payroll tax-table automation*","Gas operations tools","Enhanced onboarding and support","Multi-department management capabilities"] },
 ];
 
