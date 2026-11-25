@@ -42,6 +42,7 @@ const plans = [
   { name:"Essential", price:200, intro:"The financial foundation for growing teams.", featured:false, features:["Core accounting and chart of accounts","Sales, invoicing and customer records","Purchases, suppliers and expenses","Banking and transaction records","USD and LRD transaction visibility","Standard financial reports","Email support"] },
   { name:"Plus", price:350, intro:"More control, visibility and operational depth.", featured:true, features:["Everything in Essential","Accounts receivable and payable tools","Inventory management","Payroll and employee management","Expanded management reports","Priority support"] },
   { name:"Complete", price:500, intro:"A connected financial command centre.", featured:false, features:["Everything in Plus","AI-powered analytics and insights","Advanced reporting and business intelligence","LRA-based payroll tax-table automation*","Gas operations tools","Enhanced onboarding and support","Multi-department management capabilities"] },
+  { name:"Custom", price:null, intro:"A tailored solution for requirements beyond the standard plans.", featured:false, custom:true, features:["Discuss additional features your organization needs","Review workflows not currently covered by the platform","Agree on scope, priorities and implementation approach","Receive a tailored proposal and quotation","Dedicated consultation with the Hindsfeet team"] },
 ];
 
 const industries = [
@@ -196,15 +197,16 @@ export default function Home() {
     <section id="pricing" className="section-pad">
       <div className="container-x">
         <div className="mx-auto max-w-[700px] text-center"><div className="eyebrow">Simple, transparent subscriptions</div><h2 className="section-title mt-5">Choose the level of support<br/>your organization needs.</h2><p className="section-copy mt-5">Straightforward monthly pricing, with room to grow as your financial operations become more sophisticated.</p></div>
-        <div className="mt-12 grid items-stretch gap-5 lg:grid-cols-3">
+        <div className="mt-12 grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-4">
           {plans.map(p=><div key={p.name} className={`price-card ${p.featured?"featured":""}`}>
             {p.featured&&<span className="absolute -top-3 left-7 rounded-full bg-[#f4b400] px-4 py-1.5 text-[10px] font-extrabold uppercase tracking-wider text-[#10284b]">Most popular</span>}
+            {p.custom&&<span className="mb-3 inline-flex rounded-full bg-amber-50 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-[#946600]">Tailored solution</span>}
             <p className="text-sm font-extrabold text-[#17447f]">{p.name}</p><p className="mt-2 min-h-[42px] text-sm text-slate-500">{p.intro}</p>
-            <div className="mt-6 flex items-end gap-1"><span className="text-5xl font-extrabold tracking-[-.06em] text-[#0b2148]">${p.price}</span><span className="pb-2 text-sm text-slate-400">/ month</span></div>
+            <div className="mt-6 flex min-h-[60px] items-end gap-1">{p.custom?<><span className="text-3xl font-extrabold tracking-[-.04em] text-[#0b2148]">Let's talk</span></>:<><span className="text-5xl font-extrabold tracking-[-.06em] text-[#0b2148]">${p.price}</span><span className="pb-2 text-sm text-slate-400">/ month</span></>}</div>
             <div className="my-7 h-px bg-slate-100"/>
-            <p className="mb-4 text-[11px] font-extrabold uppercase tracking-[.14em] text-slate-400">What's included</p>
+            <p className="mb-4 text-[11px] font-extrabold uppercase tracking-[.14em] text-slate-400">{p.custom?"How it works":"What's included"}</p>
             <ul className="space-y-3">{p.features.map(f=><li key={f} className="flex gap-2 text-[13px] leading-5 text-slate-600"><Check size={16} className="check"/>{f}</li>)}</ul>
-            <a href={DEMO_URL || "https://forms.google.com/"} target="_blank" rel="noreferrer" className={`mt-8 w-full ${p.featured?"btn-primary":"btn-secondary"}`}>Discuss this plan <ArrowRight size={15}/></a>
+            {p.custom?<a href="#book-demo" className="btn-secondary mt-8 w-full">Discuss your requirements <ArrowRight size={15}/></a>:<a href={DEMO_URL || "https://forms.google.com/"} target="_blank" rel="noreferrer" className={`mt-8 w-full ${p.featured?"btn-primary":"btn-secondary"}`}>Discuss this plan <ArrowRight size={15}/></a>}
           </div>)}
         </div>
         <p className="mt-6 text-center text-[11px] text-slate-400">*LRA tax-table automation and AI insights are subject to feature availability, implementation and verification. Contact us for a confirmed plan specification.</p>
